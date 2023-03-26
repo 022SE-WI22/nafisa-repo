@@ -1,1 +1,1 @@
-This is my first git file.txt
+This is my first git file.
