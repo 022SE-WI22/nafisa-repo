@@ -1,0 +1,14 @@
+---
+- name: Condition learning
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: When condition
+      yum:
+        name: bind-utils
+        state: present
+      when: ansible_distribution == "CentOS"
+      register: output       
+    - debug:
+        msg: "My distribution is : {{ ansible_distribution }} {{ output }} {{ansible_hostname}}" 
