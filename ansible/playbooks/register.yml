@@ -1,0 +1,8 @@
+---
+- name: Learning register variable
+  hosts: all
+  tasks: 
+    - name: Display date
+      shell: date
+      register: output
+    - debug: msg="Date is {{output.stdout_lines}}"

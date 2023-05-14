@@ -1,0 +1,22 @@
+###Inventory_without_sshkeys
+
+[myhosts]
+ccg11cbdbtk5.ccg11.slc.ppinc.com
+ccg11cbdbtk6.ccg11.slc.ppinc.com
+
+[oracle]
+ccg11cbdbtk9.ccg11.slc.ppinc.com
+ccg11cbdbtk10.ccg11.slc.ppinc.com
+
+[db]
+ccg11cbdbtk2.ccg11.slc.ppinc.com
+ccg11cbdbtk11.ccg11.slc.ppinc.com
+ccg11cbdbtk7.ccg11.slc.ppinc.com
+ccg11cbdbtk4.ccg11.slc.ppinc.com
+
+[securessh:children]
+myhosts
+db
+
+[securessh:vars]
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
